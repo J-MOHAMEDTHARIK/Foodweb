@@ -1,0 +1,39 @@
+.header {
+  width: 80vw;
+  height: 60vh;
+  margin: 10px auto;
+  background: url("../../assets/header_img.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  animation: FadeIn 4s;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff7f50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ff6347;
+}

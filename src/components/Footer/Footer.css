@@ -1,0 +1,43 @@
+.footer {
+  background-color: #323232;
+  color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 8vw;
+  margin-top: 100px;
+}
+.footcontent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+}
+.footleft,
+.footcenter,
+.footright {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 20px;
+}
+.footcenter,
+.footright {
+  margin-top: 70px;
+}
+.footcenter li,
+.footright li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+.icons img {
+  width: 40px;
+  margin-right: 15px;
+}
+.footer hr {
+  width: 100%;
+  margin: 20p 0px;
+  height: 2px;
+  background-color: grey;
+}
