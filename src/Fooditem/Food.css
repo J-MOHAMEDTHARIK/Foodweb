@@ -5,6 +5,9 @@
   transition: 0.5s;
   box-shadow: 0px 0px 10px #00000015;
   animation: fadeIn 1s;
+  background-color: #2a2a2a;
+  padding: 15px;
+  color: #ffffff;
 }
 
 .images {
@@ -28,9 +31,10 @@
 .name-rate p {
   font-size: 20px;
   font-weight: 500;
+  color: #ffffff;
 }
 .dis {
-  color: #49557e;
+  color: #d0d0d0;
   padding-bottom: 10px;
 }
 .pri {

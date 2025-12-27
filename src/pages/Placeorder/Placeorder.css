@@ -13,14 +13,17 @@
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 50px;
+  color: #ffffff;
 }
 .left input {
   margin-bottom: 15px;
   width: 100%;
   padding: 10px;
-  border: 1px solid #c5c5c5;
+  border: 1px solid #555555;
   border-radius: 4px;
   outline-color: tomato;
+  background-color: #2a2a2a;
+  color: #ffffff;
 }
 .left .fields {
   display: flex;
@@ -37,9 +40,10 @@
 .payment-methods {
   margin-top: 20px;
   padding: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #555555;
   border-radius: 8px;
-  background: #f9f9f9;
+  background: #2a2a2a;
+  color: #ffffff;
 }
 
 .payment-methods h3 {
@@ -56,16 +60,24 @@
   margin-top: 20px;
   padding: 15px;
   border-radius: 8px;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
+  background: #2a2a2a;
+  border: 1px solid #555555;
+  color: #ffffff;
 }
 
-.card-form input,
-.payment-methods input[type="radio"] {
+.card-form input {
   margin-top: 10px;
   margin-right: 8px;
   padding: 8px;
   width: 100%;
+  background-color: #1a1a1a;
+  border: 1px solid #555555;
+  color: #ffffff;
+}
+
+.payment-methods input[type="radio"] {
+  margin-top: 10px;
+  margin-right: 8px;
 }
 
 .pay-now-btn {
@@ -81,4 +93,42 @@
 
 .pay-now-btn:hover {
   background-color: #218838;
+}
+
+.payment-success {
+  text-align: center;
+  padding: 50px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.payment-success h2 {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.payment-success p {
+  color: #d0d0d0;
+  margin: 10px 0;
+}
+
+.cart-total {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.cart-total h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.cart-total .total-details {
+  color: #ffffff;
+}
+
+.cart-total hr {
+  border-color: #555555;
 }

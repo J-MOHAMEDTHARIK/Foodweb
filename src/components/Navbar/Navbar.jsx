@@ -1,12 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Storecontext } from "../../context/Storecontext";
 
-const Navbar = ({ setLogin }) => {
+const Navbar = ({ setLogin, user, onLogout }) => {
   const [menu, setMenu] = useState("Home");
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const { getTotal } = useContext(Storecontext);
+  const profileRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setShowProfileMenu(false);
+      }
+    };
+
+    if (showProfileMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showProfileMenu]);
+  
   return (
     <div className="navbar">
       <Link to="/">
@@ -49,7 +68,36 @@ const Navbar = ({ setLogin }) => {
           </Link>
           <div className={getTotal() === 0 ? "" : "dot"}></div>
         </div>
-        <button onClick={() => setLogin(true)}>Sign In</button>
+        {user ? (
+          <div className="profile-container" ref={profileRef}>
+            <div
+              className="profile-icon"
+              onClick={() => setShowProfileMenu(!showProfileMenu)}
+            >
+              {user.firstLetter}
+            </div>
+            {showProfileMenu && (
+              <div className="profile-menu">
+                <div className="profile-menu-item">
+                  <p>{user.name}</p>
+                  <p className="profile-email">{user.email}</p>
+                </div>
+                <hr />
+                <div
+                  className="profile-menu-item"
+                  onClick={() => {
+                    onLogout();
+                    setShowProfileMenu(false);
+                  }}
+                >
+                  <p>Logout</p>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <button onClick={() => setLogin(true)}>Sign In</button>
+        )}
       </div>
     </div>
   );

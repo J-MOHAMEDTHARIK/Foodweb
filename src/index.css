@@ -9,6 +9,9 @@
 }
 body {
   min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 50%, #1a1a1a 100%);
+  background-attachment: fixed;
+  color: #ffffff;
 }
 a {
   text-decoration: none;

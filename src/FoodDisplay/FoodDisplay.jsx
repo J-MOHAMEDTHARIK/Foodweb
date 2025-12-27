@@ -5,11 +5,16 @@ import Fooditem from "../Fooditem/Fooditem";
 
 const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(Storecontext);
+  
+  const filteredFoodList = category === "All" 
+    ? food_list 
+    : food_list.filter((item) => item.category === category);
+  
   return (
     <div className="food-display">
       <h2>Top Dishes For You</h2>
       <div className="food-list">
-        {food_list.map((item, index) => {
+        {filteredFoodList.map((item, index) => {
           return (
             <Fooditem
               key={index}

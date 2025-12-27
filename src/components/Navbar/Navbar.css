@@ -12,7 +12,7 @@
   display: flex;
   list-style: none;
   gap: 30px;
-  color: #49557e;
+  color: #ffffff;
   font-size: 18px;
 }
 .navbar-right {
@@ -27,7 +27,7 @@
   font-size: 16px;
   border: 1px solid tomato;
   cursor: pointer;
-  color: #49557e;
+  color: #ffffff;
   transition: 0.3;
 }
 
@@ -42,15 +42,140 @@
 .navbar li {
   cursor: pointer;
 }
+.navbar-right > img:first-child {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.navbar-right > img:first-child:hover {
+  filter: brightness(0) invert(0.7) sepia(1) saturate(5) hue-rotate(350deg);
+  transform: scale(1.15);
+  background-color: rgba(255, 99, 71, 0.2);
+}
+
 .navbar-search-icon {
   position: relative;
+  cursor: pointer;
 }
+
+.navbar-search-icon a {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.navbar-search-icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+  padding: 6px;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.navbar-search-icon:hover img {
+  filter: brightness(0) invert(0.7) sepia(1) saturate(5) hue-rotate(350deg);
+  transform: scale(1.15);
+  background-color: rgba(255, 99, 71, 0.2);
+}
+
 .navbar-search-icon .dot {
   position: absolute;
-  min-width: 10px;
-  min-height: 10px;
-  background-color: tomato;
-  border-radius: 5px;
-  top: -8px;
-  right: -8px;
+  min-width: 14px;
+  min-height: 14px;
+  background-color: #ff6347;
+  border-radius: 50%;
+  top: -6px;
+  right: -6px;
+  box-shadow: 0 0 10px rgba(255, 99, 71, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6347 0%, #ff8c69 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+}
+
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #2a2a2a;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  min-width: 200px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.profile-menu-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-menu-item:hover {
+  background-color: #3a3a3a;
+}
+
+.profile-menu-item p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.profile-email {
+  color: #b0b0b0 !important;
+  font-size: 12px !important;
+  margin-top: 5px !important;
+}
+
+.profile-menu hr {
+  border: none;
+  border-top: 1px solid #555555;
+  margin: 0;
 }

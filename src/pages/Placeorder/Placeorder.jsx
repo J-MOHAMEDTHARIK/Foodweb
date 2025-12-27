@@ -24,6 +24,18 @@ const Placeorder = () => {
     alert("Payment successful! Order placed.");
   };
 
+  if (paymentSubmitted) {
+    return (
+      <div className="place-order">
+        <div className="payment-success">
+          <h2>Payment Successful!</h2>
+          <p>Your order has been placed successfully.</p>
+          <p>Thank you for your purchase!</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form className="place-order" onSubmit={handlePaymentSubmit}>
       <div className="left">
